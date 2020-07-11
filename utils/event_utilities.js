@@ -1,15 +1,15 @@
-const Event = require("../models/events")
+const Event = require("../models/event")
 
-const getAllEvents = function(){
+const getAllEvents = function(req){
     return Event.find()
 }
 
-const addEvent = function(body){
-    return new Event(body)
+const addEvent = function(req){
+    return new Event(req.body)
 }
 
-const getEventById = function(id){
-    return Event.findById(id)
+const getEventById = function(req){
+    return Event.findById(req.params.id)
 }
 
 const updateEvent = function(req){
@@ -18,8 +18,13 @@ const updateEvent = function(req){
     })
 }
 
-const deleteEvent = function(id){
-    return Event.findByIdAndRemove(id)
+const deleteEvent = function(req){
+    return Event.findByIdAndRemove(req.params.id)
 }
 
-module.exports = {getAllEvents, addEvent, getEventById, updateEvent, deleteEvent}
+module.exports = {
+    getAllEvents, 
+    addEvent, 
+    getEventById, 
+    updateEvent, 
+    deleteEvent}
