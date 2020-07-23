@@ -43,7 +43,7 @@ if(process.env.NODE_ENV !== 'production') {
 
 // Connect to database
 
-// const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
 const dbConn = 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
