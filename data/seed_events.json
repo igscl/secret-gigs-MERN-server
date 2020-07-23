@@ -4,17 +4,7 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [
-        {
-
-            "username": "person1",
-            "accepted": false
-
-        },
-        {
-            "username": "person2",
-            "accepted": false
-        }]
+    "applicants": []
 
 },{
     "name": "Event 2",
@@ -22,12 +12,7 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [{
-
-    "username": "",
-    "accepted": false
-
-    }]
+    "applicants": []
 
 },{
     "name": "Event 3",
@@ -35,12 +20,7 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [{
-
-    "username": "",
-    "accepted": false
-
-    }]
+    "applicants": []
 
 },{
     "name": "Event 4",
@@ -48,12 +28,7 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [{
-
-    "username": "",
-    "accepted": false
-
-    }]
+    "applicants": []
 
 },{
     "name": "Event 5",
@@ -61,12 +36,7 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [{
-
-    "username": "",
-    "accepted": false
-
-    }]
+    "applicants": []
 
 },{
     "name": "Event 6",
@@ -74,12 +44,39 @@
     "generalLocation": "NSW",
     "specificLocation": "12 Street St.",
     "capacity": 10,
-    "applicants": [{
+    "applicants": []
 
-    "username": "",
-    "accepted": false
+},{
+    "name": "Event 7",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": []
 
-    }]
+},{
+    "name": "Event 8",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": []
+
+},{
+    "name": "Event 9",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": []
+
+},{
+    "name": "Event 10",
+    "date": "September 5",
+    "generalLocation": "NSW",
+    "specificLocation": "12 Street St.",
+    "capacity": 10,
+    "applicants": []
 
 }
 ]

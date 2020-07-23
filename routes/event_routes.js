@@ -5,21 +5,35 @@ const {
     postEvent, 
     getEvent, 
     modifyEvent, 
-    removeEvent} = require("../controllers/event_controllers")
+    removeEvent,
+    applyToEvent,
+    userAuthenticated,
+    selectRandomUsers
+
+} = require("../controllers/event_controllers")
+
+//After this require login
+router.use(userAuthenticated)
 
 // READ
 router.get("/", getEvents)
 
-// CREATE
-router.post("/", postEvent)
-
 //READ
 router.get("/:id", getEvent)
 
-//UPDATE
+// CREATE
+router.post("/", postEvent)
+
+// //UPDATE
 router.put("/:id", modifyEvent)
 
 //DELETE
 router.delete("/:id", removeEvent)
+
+//UPDATE
+router.put("/:id/apply", applyToEvent)
+
+//UPDATE
+router.put("/:id/select", selectRandomUsers)
 
 module.exports = router;

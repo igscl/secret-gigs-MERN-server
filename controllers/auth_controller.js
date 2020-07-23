@@ -1,5 +1,6 @@
 const passport = require("passport")
 const User = require("../models/user")
+const {handleError} = require("../utils/common_utils")
 
 const register = function (req, res) {
     User.register(new User({
@@ -8,24 +9,37 @@ const register = function (req, res) {
         phoneNumber: req.body.phoneNumber
     }), req.body.password, function (err) {
         if (err) {
-            res.status(500)
-            res.json({error: err})
+            
+        //     res.status(500)
+        //     res.json({error: err})
+        // } else {
+        //     loginUser(req, res)
+
+        if(err.name === 'UserExistsError') {
+            req.status = 409;
+            req.message = err.message;
+            return handleError(req,res);
         } else {
-            loginUser(req, res)
+            req.message = err.message;
+            return handleError(req,res);
         }
+        }
+        loginUser(req, res)
     })
 }
-
 
 const authenticate = passport.authenticate("local")
 // helper function
 
-function loginUser(req, res) {
+const loginUser = (req, res) => {
     	// passport.authenticate returns a function that we will call 
 //with req, res, and a callback function to execute on success    
 
     authenticate(req, res, function () {
-        res.json(req.user)
+        console.log('authenticated user: ', req.user.username);
+		console.log('session: ', req.session);
+        res.status(200);
+        res.json({user: req.user, sessionID: req.sessionID});
     })
 }
 

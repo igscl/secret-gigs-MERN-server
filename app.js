@@ -3,6 +3,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const passport = require("passport")
+const session = require('express-session')
+const MongoStore = require("connect-mongo")(session)
 const eventRouter = require("./routes/event_routes")
 const authRouter = require("./routes/auth_routes")
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
@@ -18,7 +20,20 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-app.use(cors());
+const whitelist = ['http://localhost:3001']
+app.use(cors({
+    credentials: true,
+    origin: function (origin,callback) {
+        // Check each url in whitelist and see if it includes the origin (instead of matching exact string)
+        const whitelistIndex = whitelist.findIndex((url) => url.includes(origin))
+        console.log("found whitelistIndex", whitelistIndex)
+        callback(null,whitelistIndex > -1)
+    }
+}));
+
+// const corsOptions = {
+//     credentials: true
+// }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -52,6 +67,21 @@ mongoose.connect(
 // app.get("/",(req,res) => {
 //     res.send("Express server running")
 // });
+
+app.use(
+    session({
+        secret: "super secret secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1800000
+        },
+        store: new MongoStore({
+            mongooseConnection: mongoose.connection
+        })
+    })
+)
+
 
 require('./config/passport')
 app.use(passport.initialize())
