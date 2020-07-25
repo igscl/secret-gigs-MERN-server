@@ -7,16 +7,23 @@ const {
     modifyEvent, 
     removeEvent,
     applyToEvent,
-    userAuthenticated,
+    myEvents,
+    // userAuthenticated,
     selectRandomUsers
 
 } = require("../controllers/event_controllers")
+const { userAuthenticated } = require("../utils/common_utils")
+
 
 //After this require login
-router.use(userAuthenticated)
+// router.use(userAuthenticated)
+router.use(userAuthenticated/*, validUser*/)
 
 // READ
 router.get("/", getEvents)
+
+//View Events
+router.get("/myevents", myEvents)
 
 //READ
 router.get("/:id", getEvent)
@@ -35,5 +42,7 @@ router.put("/:id/apply", applyToEvent)
 
 //UPDATE
 router.put("/:id/select", selectRandomUsers)
+
+
 
 module.exports = router;

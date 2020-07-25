@@ -36,7 +36,7 @@ const loginUser = (req, res) => {
 //with req, res, and a callback function to execute on success    
 
     authenticate(req, res, function () {
-        console.log('authenticated user: ', req.user.username);
+        console.log('authenticated user: ', req.user);
 		console.log('session: ', req.session);
         res.status(200);
         res.json({user: req.user, sessionID: req.sessionID});

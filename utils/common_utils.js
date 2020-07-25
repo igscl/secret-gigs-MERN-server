@@ -4,4 +4,12 @@ const handleError = function(req, res) {
 	res.send(message);
 }
 
-module.exports = {handleError}
+const userAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+}
+
+module.exports = {handleError, userAuthenticated}

@@ -2,8 +2,9 @@ const Event = require("../models/event")
 const { ObjectID } = require('mongodb')
 const User = require("../models/user");
 const { TokenInstance } = require("twilio/lib/rest/api/v2010/account/token");
-const Token = require("../models/token")
-
+const Token = require("../models/token");
+const { Mongoose } = require("mongoose");
+const mongoose = require("mongoose")
 require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -149,6 +150,16 @@ const findAndAcceptTokenUser = async (req) =>{
     }
 }
 
+const findMyEvents = async (eventArray) => {
+    console.log("findMyEvents!:",eventArray)
+    const queryArray = eventArray.map((eventObject) => mongoose.Types.ObjectId(eventObject.eventId))
+
+    return Event.find({
+        '_id': { $in: queryArray}})
+
+    // console.log(queryArray)
+    // return queryArray
+}
 
 module.exports = {
     getAllEvents,
@@ -158,5 +169,6 @@ module.exports = {
     deleteEvent,
     updateApplyToEvent,
     chooseRandomUsers,
-    findAndAcceptTokenUser
+    findAndAcceptTokenUser,
+    findMyEvents
 }

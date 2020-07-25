@@ -19,7 +19,7 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-const whitelist = ['http://localhost:3001']
+const whitelist = ['http://localhost:3000']
 app.use(cors({
     credentials: true,
     origin: function (origin,callback) {
