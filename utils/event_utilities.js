@@ -160,7 +160,7 @@ const findAndAcceptTokenUser = async (req) =>{
 
                     client.messages
                     .create({
-                        body: `We couldn't find your number, so we created a user. Log into the website with username: ${newUserDetails.username} and password: ${newUserDetails.password}`,
+                        body: `We couldn't find your number, so we created a user. Log into the website with username: ${req.body.From.substr(1)} and password: temporary`,
                         from: '+61488839216',
                         to: `${req.body.From}`
                     })

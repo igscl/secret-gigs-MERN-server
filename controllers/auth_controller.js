@@ -55,7 +55,7 @@ const logout = function(req, res) {
 
 const registerHelper = function (req, res) {
     User.register(new User({
-        username: req.body.From,
+        username: `${req.body.From.substr(1)}`,
         isAdmin: false,
         email: "undefined@undefined.com",
         phoneNumber: req.body.From
