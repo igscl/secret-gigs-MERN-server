@@ -12,7 +12,7 @@ const {
     selectRandomUsers
 
 } = require("../controllers/event_controllers")
-const { userAuthenticated } = require("../utils/common_utils")
+const { userAuthenticated, userIsAdministrator } = require("../utils/common_utils")
 
 
 //After this require login
@@ -28,21 +28,22 @@ router.get("/myevents", myEvents)
 //READ
 router.get("/:id", getEvent)
 
-// CREATE
-router.post("/", postEvent)
-
-// //UPDATE
-router.put("/:id", modifyEvent)
-
-//DELETE
-router.delete("/:id", removeEvent)
-
 //UPDATE
 router.put("/:id/apply", applyToEvent)
+
+//Only admins from here:
+router.use(userIsAdministrator)
 
 //UPDATE
 router.put("/:id/select", selectRandomUsers)
 
+//DELETE
+router.delete("/:id", removeEvent)
 
+// //UPDATE
+router.put("/:id", modifyEvent)
+
+// CREATE
+router.post("/", postEvent)
 
 module.exports = router;

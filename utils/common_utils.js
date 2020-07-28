@@ -12,4 +12,12 @@ const userAuthenticated = function (req, res, next) {
     }
 }
 
-module.exports = {handleError, userAuthenticated}
+const userIsAdministrator = function (req, res, next) {
+    if (req.user.isAdmin) {
+        next();
+    } else {
+        res.sendStatus(403);
+    }
+}
+
+module.exports = {handleError, userAuthenticated, userIsAdministrator}
