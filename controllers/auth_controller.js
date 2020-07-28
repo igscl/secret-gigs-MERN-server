@@ -5,6 +5,7 @@ const {handleError} = require("../utils/common_utils")
 const register = function (req, res) {
     User.register(new User({
         username: req.body.username,
+        isAdmin: false,
         email: req.body.email,
         phoneNumber: req.body.phoneNumber
     }), req.body.password, function (err) {
@@ -51,6 +52,8 @@ const logout = function(req, res) {
 	console.log("req.user:", req.user)
 	res.sendStatus(200)
 }
+
+
 
 
 module.exports = { register, loginUser, logout }

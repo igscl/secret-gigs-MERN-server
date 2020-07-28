@@ -12,7 +12,7 @@ const {
     selectRandomUsers
 
 } = require("../controllers/event_controllers")
-const { userAuthenticated } = require("../utils/common_utils")
+const { userAuthenticated, userIsAdministrator } = require("../utils/common_utils")
 
 
 //After this require login
@@ -40,6 +40,8 @@ router.delete("/:id", removeEvent)
 //UPDATE
 router.put("/:id/apply", applyToEvent)
 
+
+router.use(userIsAdministrator)
 //UPDATE
 router.put("/:id/select", selectRandomUsers)
 
