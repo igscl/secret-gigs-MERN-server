@@ -108,6 +108,7 @@ const chooseRandomUsers = async (req) => {
     }
     for (let i=0 ; i<event.applicants.length; i++){
         if (uniqueRandomIndex.includes(i)){
+            if (event.applicants[i].accepted === false){
         event.applicants[i].accepted = true
         let token = await Token.findOne({lives:5})
 
@@ -120,7 +121,7 @@ const chooseRandomUsers = async (req) => {
         })
         .then(message => console.log(message.sid))
 
-    }
+    }}
     }
 
     return Event.findByIdAndUpdate(req.params.id, event, {
