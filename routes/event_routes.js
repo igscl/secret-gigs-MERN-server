@@ -28,23 +28,22 @@ router.get("/myevents", myEvents)
 //READ
 router.get("/:id", getEvent)
 
-// CREATE
-router.post("/", postEvent)
+//UPDATE
+router.put("/:id/apply", applyToEvent)
 
-// //UPDATE
-router.put("/:id", modifyEvent)
+//Only admins from here:
+router.use(userIsAdministrator)
+
+//UPDATE
+router.put("/:id/select", selectRandomUsers)
 
 //DELETE
 router.delete("/:id", removeEvent)
 
-//UPDATE
-router.put("/:id/apply", applyToEvent)
+// //UPDATE
+router.put("/:id", modifyEvent)
 
-
-router.use(userIsAdministrator)
-//UPDATE
-router.put("/:id/select", selectRandomUsers)
-
-
+// CREATE
+router.post("/", postEvent)
 
 module.exports = router;
