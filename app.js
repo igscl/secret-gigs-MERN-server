@@ -10,7 +10,6 @@ const authRouter = require("./routes/auth_routes")
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const tokenRouter = require("./routes/token_routes")
 
-
 // Sets port if deploying to external provider 
 // or port assigned already
 const port = process.env.PORT || 3003;
@@ -20,7 +19,11 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-const whitelist = ['http://localhost:3001']
+const whitelist = [
+    'http://localhost:3000',
+    'https://secret-gigs.netlify.app'
+
+]
 app.use(cors({
     credentials: true,
     origin: function (origin,callback) {
