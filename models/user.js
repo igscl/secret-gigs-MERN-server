@@ -19,6 +19,10 @@ const User = new Schema({
         type: String,
         required: true
     },
+    availableToken: {
+        type: String,
+        required:false
+    },
     eventsApplied: {
         type: Array,
         required: false
