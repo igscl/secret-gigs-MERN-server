@@ -57,6 +57,12 @@ const updateApplyToEvent = async (req) => {
         let newEventAppliedTo = {
             eventId: event.id
         }
+        //if user has an available token from automatic sign up through SMS, gets automatically accepted the applied event
+        if (user[0].availableToken !== ""){
+            newApplication.accepted = true
+            user[0].availableToken = ""
+            user[0].save()
+        }
         event.applicants.push(newApplication)
 
         // refactor
