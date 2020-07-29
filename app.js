@@ -19,7 +19,11 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-const whitelist = ['http://localhost:3000']
+const whitelist = [
+    'http://localhost:3000',
+    'https://secret-gigs.netlify.app'
+
+]
 app.use(cors({
     credentials: true,
     origin: function (origin,callback) {
@@ -42,8 +46,8 @@ if(process.env.NODE_ENV !== 'production') {
 
 // Connect to database
 
-// const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
-const dbConn = 'mongodb://localhost/secret_gigs';
+const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+// const dbConn = 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
     dbConn,
