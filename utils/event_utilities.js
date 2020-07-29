@@ -166,13 +166,14 @@ const findAndAcceptTokenUser = async (req) => {
                 registerHelper(req)
                 console.log("sending the MESSAGE")
 
-                // client.messages
-                //     .create({
-                //         body: `We couldn't find your number, so we created a user. Log into the website with username: ${req.body.From.substr(1)} and password: temporary`,
-                //         from: '+61488839216',
-                //         to: `${req.body.From}`
-                //     })
-                //     .then(message => console.log(message.sid))
+                client.messages
+                    .create({
+                        body: `We couldn't find your number, so we created a user. Log into the website with username: ${req.body.From.substr(1)} and password: temporary`,
+                        from: '+61488839216',
+                        to: `${req.body.From}`
+                    })
+                    .then(message => console.log(message.sid))
+                    .catch(e => { console.error('Got an error:', e.code, e.message); });
 
             }
         } catch (err) {
