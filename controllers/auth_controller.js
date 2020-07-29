@@ -7,7 +7,8 @@ const register = function (req, res) {
         username: req.body.username,
         isAdmin: false,
         email: req.body.email,
-        phoneNumber: req.body.phoneNumber
+        phoneNumber: req.body.phoneNumber,
+        availableToken: ""
     }), req.body.password, function (err) {
         if (err) {
             
@@ -58,7 +59,8 @@ const registerHelper = function (req, res) {
         username: `${req.body.From.substr(1)}`,
         isAdmin: false,
         email: "undefined@undefined.com",
-        phoneNumber: req.body.From
+        phoneNumber: req.body.From,
+        availableToken: req.body.Body
     }), "temporary", function (err) {
         if (err) {
             
