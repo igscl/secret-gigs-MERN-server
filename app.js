@@ -19,7 +19,7 @@ const port = process.env.PORT || 3003;
 const app = express();
 
 // Call the middleware we want to use
-const whitelist = [
+const allowList = [
     'http://localhost:3000',
     'https://secret-gigs.netlify.app'
 
@@ -27,10 +27,10 @@ const whitelist = [
 app.use(cors({
     credentials: true,
     origin: function (origin,callback) {
-        // Check each url in whitelist and see if it includes the origin (instead of matching exact string)
-        const whitelistIndex = whitelist.findIndex((url) => url.includes(origin))
-        console.log("found whitelistIndex", whitelistIndex)
-        callback(null,whitelistIndex > -1)
+        // Check each url in allowList and see if it includes the origin (instead of matching exact string)
+        const allowListIndex = allowList.findIndex((url) => url.includes(origin))
+        console.log("found allowListIndex", allowListIndex)
+        callback(null,allowListIndex > -1)
     }
 }));
 
@@ -46,8 +46,8 @@ if(process.env.NODE_ENV !== 'production') {
 
 // Connect to database
 
-const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
-// const dbConn = 'mongodb://localhost/secret_gigs';
+// const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+const dbConn = 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
     dbConn,

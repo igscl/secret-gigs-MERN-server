@@ -54,6 +54,15 @@ const logout = function(req, res) {
 	res.sendStatus(200)
 }
 
+const userSession = function(req,res) {
+    if (req.sessionID && req.user) {
+        res.send(req.user)
+    } else {
+        res.status(404).send({error: "user session not found!"})
+    }
+}
+
+
 const registerHelper = function (req, res) {
     User.register(new User({
         username: `${req.body.From.substr(1)}`,
@@ -83,4 +92,4 @@ const registerHelper = function (req, res) {
 }
 
 
-module.exports = { register, loginUser, logout, registerHelper }
+module.exports = { register, loginUser, logout, registerHelper, userSession }
