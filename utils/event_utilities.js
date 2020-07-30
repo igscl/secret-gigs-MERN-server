@@ -94,7 +94,7 @@ const chooseRandomUsers = async (req) => {
     let acceptedUsers = []
 
     let limit = event.capacity,
-        amount = 2,
+        amount = 1,
         lowerBound = 0,
         upperBound = event.applicants.length,
         uniqueRandomIndex = []
