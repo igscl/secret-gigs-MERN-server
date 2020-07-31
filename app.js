@@ -24,6 +24,8 @@ const allowList = [
     'https://secret-gigs.netlify.app'
 
 ]
+app.enable('trust proxy');
+
 app.use(cors({
     credentials: true,
     origin: function (origin,callback) {
@@ -71,13 +73,27 @@ mongoose.connect(
 //     res.send("Express server running")
 // });
 
+app.enable('trust proxy');
+// app.use(express.session({
+//     proxy: true,
+//     cookie: {
+//         secure: true,
+//         sameSite: 'none',
+//         httpOnly: false
+//     }
+// }));
+
 app.use(
     session({
         secret: "super secret secret",
         resave: false,
         saveUninitialized: false,
+        proxy: true,
         cookie: {
-            maxAge: 1800000
+            maxAge: 1800000,
+            secure: true,
+            sameSite: 'none',
+            httpOnly: false
         },
         store: new MongoStore({
             mongooseConnection: mongoose.connection
