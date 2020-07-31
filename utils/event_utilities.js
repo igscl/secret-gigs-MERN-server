@@ -61,7 +61,7 @@ const updateApplyToEvent = async (req) => {
         if (user[0].availableToken !== ""){
             newApplication.accepted = true
             user[0].availableToken = ""
-            user[0].save()
+            // user[0].save()
         }
         event.applicants.push(newApplication)
 

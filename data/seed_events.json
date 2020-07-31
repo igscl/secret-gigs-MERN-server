@@ -1,80 +1,80 @@
 [{
-    "name": "Event 1",
+    "name": "Taylor Swift",
     "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "generalLocation": "Sydney",
+    "specificLocation": "Bianca's Home",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 2",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Foo Fighters",
+    "date": "September 15",
+    "generalLocation": "Brisbane",
+    "specificLocation": "Michael's Home",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 3",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Billie Eilish",
+    "date": "October 5",
+    "generalLocation": "Melbourne",
+    "specificLocation": "Jairo's Living Room",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 4",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Post Malone",
+    "date": "November 5",
+    "generalLocation": "Sydney",
+    "specificLocation": "Janel's Patio",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 5",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Bon Iver",
+    "date": "August 23",
+    "generalLocation": "Melbourne",
+    "specificLocation": "Alex's Garage",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 6",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "The Weeknd",
+    "date": "August 10",
+    "generalLocation": "Adelaide",
+    "specificLocation": "Steph's Home",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 7",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Drake",
+    "date": "December 30",
+    "generalLocation": "Perth",
+    "specificLocation": "Bianca's Patio",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 8",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Justin Bieber",
+    "date": "October 11",
+    "generalLocation": "Sydney",
+    "specificLocation": "Coder Academy",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 9",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "Lady Gaga",
+    "date": "January 13",
+    "generalLocation": "Melbourne",
+    "specificLocation": "Jairo's Garden",
     "capacity": 10,
     "applicants": []
 
 },{
-    "name": "Event 10",
-    "date": "September 5",
-    "generalLocation": "NSW",
-    "specificLocation": "12 Street St.",
+    "name": "The Rolling Stones",
+    "date": "January 31",
+    "generalLocation": "Melbourne",
+    "specificLocation": "Greer's Rooftop",
     "capacity": 10,
     "applicants": []
 
