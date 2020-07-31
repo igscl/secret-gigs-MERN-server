@@ -6,6 +6,16 @@ Ignacio Giadach | https://github.com/igscl/
 
 Luisa Ziccarelli | https://github.com/luisaziccarelli
 
+## Deployed Links
+
+Client: https://secret-gigs.netlify.app/
+Server: http://secret-gigs.herokuapp.com/
+
+## Github Repositories
+
+Client: https://github.com/igscl/secret-gigs-MERN-client
+Server: https://github.com/igscl/secret-gigs-MERN-server
+
 ## 1. Description of the website 
 
 ### 1.1 Purpose 
@@ -126,4 +136,23 @@ Also bands that want to connect with their fan-base organising safe, cool, memor
 #### 6.5 Trello Screenshots (11-07-2020)
 ![alt text](./docs/screenshots/trello_screenshot_11-07.png "Trello 5")
 #### 6.6 Trello Screenshots (13-07-2020)
-![alt text](./docs/screenshots/trello_screenshot_13-07.png "Trello 5") 
+![alt text](./docs/screenshots/trello_screenshot_13-07.png "Trello 5")
+#### 6.7 Trello Screenshots (25-07-2020)
+![alt text](./docs/screenshots/25b.png "Trello 6")
+#### 6.8 Trello Screenshots (26-07-2020)
+![alt text](./docs/screenshots/26.png "Trello 7")
+#### 6.9 Trello Screenshots (29-07-2020)
+![alt text](./docs/screenshots/29b.png "Trello 8")
+#### 6.10 Trello Screenshots (31-07-2020)
+![alt text](./docs/screenshots/31d.png "Trello 9")
+
+
+## 7. Screenshots
+
+![alt text](./docs/screenshots/1.png "Demo 1")
+![alt text](./docs/screenshots/2.png "Demo 2")
+![alt text](./docs/screenshots/3.png "Demo 3")
+![alt text](./docs/screenshots/4.png "Demo 4")
+![alt text](./docs/screenshots/5.png "Demo 5")
+![alt text](./docs/screenshots/6.png "Demo 6")
+![alt text](./docs/screenshots/7.png "Demo 7")
