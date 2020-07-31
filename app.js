@@ -73,7 +73,8 @@ mongoose.connect(
 //     res.send("Express server running")
 // });
 
-app.enable('trust proxy');
+// app.enable('trust proxy');
+
 // app.use(express.session({
 //     proxy: true,
 //     cookie: {
@@ -91,9 +92,9 @@ app.use(
         proxy: true,
         cookie: {
             maxAge: 1800000,
-            secure: true,
-            sameSite: 'none',
-            httpOnly: false
+            // secure: true,
+            // sameSite: 'none',
+            // httpOnly: false
         },
         store: new MongoStore({
             mongooseConnection: mongoose.connection
