@@ -2,9 +2,9 @@ const Token = require("../models/token")
 const User = require("../models/user")
 
 const getTokenKey = function(req){
-    // req.body.lives = req.body.lives
+
     return Token.findById(req.body.Body)
-    // return Token.findById(req.body.Body)
+
 }
 
 let lastTokenLife = 0

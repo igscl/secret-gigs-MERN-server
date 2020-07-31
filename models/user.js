@@ -8,8 +8,10 @@ const User = new Schema({
     email: {
         type: String,
         required: true,
+        // commented out for testing purposes
         // unique: true,
         // uniqueCaseInsensitive: true
+
     },
     isAdmin: {
         type: Boolean,
