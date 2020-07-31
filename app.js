@@ -36,9 +36,7 @@ app.use(cors({
     }
 }));
 
-// const corsOptions = {
-//     credentials: true
-// }
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -68,20 +66,11 @@ mongoose.connect(
     }
 )
 
-// Define a simple route for GET
-// app.get("/",(req,res) => {
-//     res.send("Express server running")
-// });
 
-app.enable('trust proxy');
-// app.use(express.session({
-//     proxy: true,
-//     cookie: {
-//         secure: true,
-//         sameSite: 'none',
-//         httpOnly: false
-//     }
-// }));
+
+// app.enable('trust proxy');
+// app.set('trust proxy', 1);
+
 
 app.use(
     session({
@@ -91,9 +80,9 @@ app.use(
         proxy: true,
         cookie: {
             maxAge: 1800000,
-            secure: true,
-            sameSite: 'none',
-            httpOnly: false
+            // secure: true,
+            // sameSite: 'none',
+            // httpOnly: false
         },
         store: new MongoStore({
             mongooseConnection: mongoose.connection

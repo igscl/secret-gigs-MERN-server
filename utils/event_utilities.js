@@ -61,12 +61,11 @@ const updateApplyToEvent = async (req) => {
         if (user[0].availableToken !== ""){
             newApplication.accepted = true
             user[0].availableToken = ""
-            user[0].save()
+            // user[0].save()
         }
         event.applicants.push(newApplication)
 
-        // refactor
-        // if (user[0] !== undefined){
+
         //saves the event to the user
         user[0].eventsApplied.push(newEventAppliedTo)
         user[0].save()
@@ -86,7 +85,7 @@ const updateApplyToEvent = async (req) => {
 const chooseRandomUsers = async (req) => {
 
     let event = await Event.findById(req.params.id)
-    // /:id/choose
+
     console.log("THIS IS THE EVENT!!!!", event)
     console.log(event)
     event.applicants
