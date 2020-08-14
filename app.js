@@ -69,7 +69,7 @@ mongoose.connect(
 
 
 // app.enable('trust proxy');
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 
 
 app.use(
@@ -79,10 +79,11 @@ app.use(
         saveUninitialized: false,
         proxy: true,
         cookie: {
-            maxAge: 1800000,
-            // secure: true,
-            // sameSite: 'none',
-            // httpOnly: false
+            expires: false,
+            maxAge: 24 * 60 * 60 * 1000,
+            secure: true,
+            sameSite: 'none',
+            httpOnly: false
         },
         store: new MongoStore({
             mongooseConnection: mongoose.connection

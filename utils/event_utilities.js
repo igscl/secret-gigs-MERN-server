@@ -140,7 +140,7 @@ const findAndAcceptTokenUser = async (req) => {
     // if req.body.From is in Event
     try {
         let event = await Event.find(
-            { "applicants.phoneNumber": req.body.From })
+            { "applicants.phoneNumber": req.body.From, "applicants.accepted": false })
 
         console.log("FOUND MATCHES!", event[0])
         indexMatch = event[0].applicants.findIndex(x => x.phoneNumber === `${req.body.From}`)
