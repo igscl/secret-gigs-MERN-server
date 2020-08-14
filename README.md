@@ -9,11 +9,13 @@ Luisa Ziccarelli | https://github.com/luisaziccarelli
 ## Deployed Links
 
 Client: https://secret-gigs.netlify.app/
+
 Server: http://secret-gigs.herokuapp.com/
 
 ## Github Repositories
 
 Client: https://github.com/igscl/secret-gigs-MERN-client
+
 Server: https://github.com/igscl/secret-gigs-MERN-server
 
 ## 1. Description of the website 
