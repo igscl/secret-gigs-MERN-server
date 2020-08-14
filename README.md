@@ -44,12 +44,14 @@ Main features:
 - A registered user is able to login.
 - Registered users are able to go to the account section, see their profile and event applications with a list of current available events they can apply to.
 - A registered user has the ability to apply to events.
-- A registered user has the ability to edit and delete their profile.
 - A registered user has the ability to get an application accepted or denied by random selection.
+- After being selected the user gets an SMS with a token which can be shared with up to 5 friends
+- If a registered user texts a token through SMS to a specific number, the user gets automatically accepted to the first applied event
+- If a user is not registered and texts the token through SMS, an account is created and the user gets automatically accepted to the first applied event.
+- After being accepted, the user can see the specific location of the event.
 
 Sprinkles:
 - A registered user can go into payment page when application is accepted.
-- Once a registered user pays for the application, is able to see further details of the gig.
 - An admin has the ability to login to an admin account.
 - An admin has the ability to see all user profiles.
 - An admin has the ability to see open events and closed events.
