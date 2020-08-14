@@ -46,8 +46,8 @@ if(process.env.NODE_ENV !== 'production') {
 
 // Connect to database
 
-const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
-// const dbConn = 'mongodb://localhost/secret_gigs';
+// const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/secret_gigs';
+const dbConn = 'mongodb://localhost/secret_gigs';
 
 mongoose.connect(
     dbConn,
@@ -69,7 +69,7 @@ mongoose.connect(
 
 
 // app.enable('trust proxy');
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 
 
 app.use(
@@ -81,9 +81,9 @@ app.use(
         cookie: {
             expires: false,
             maxAge: 24 * 60 * 60 * 1000,
-            secure: true,
-            sameSite: 'none',
-            httpOnly: false
+            // secure: true,
+            // sameSite: 'none',
+            // httpOnly: false
         },
         store: new MongoStore({
             mongooseConnection: mongoose.connection
